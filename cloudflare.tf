@@ -27,7 +27,6 @@ provider "cloudflare" {
 
 variable "proxy_records" {
   type    = bool
-  default = false
 }
 
 variable "base_domain" {
