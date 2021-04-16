@@ -77,7 +77,7 @@ resource "cloudflare_record" "test_domain_a" {
   name    = "test.${var.base_domain}"
   type    = "A"
   value   = var.kubernetes_ip
-  proxied = var.proxy_records
+  proxied = false
 }
 
 resource "cloudflare_record" "youtrack_domain" {
