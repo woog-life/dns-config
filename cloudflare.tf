@@ -26,12 +26,17 @@ provider "cloudflare" {
 }
 
 variable "proxy_records" {
-  type    = bool
+  type = bool
 }
 
 variable "base_domain" {
   type    = string
   default = "woog.life"
+}
+
+variable "youtrack_domain" {
+  type    = string
+  default = "wooglife.myjetbrains.com"
 }
 
 variable "zone_id" {
@@ -65,4 +70,12 @@ resource "cloudflare_record" "api_domain_a" {
   type    = "A"
   value   = var.kubernetes_ip
   proxied = var.proxy_records
+}
+
+resource "cloudflare_record" "youtrack_domain" {
+  zone_id = var.zone_id
+  name    = "jira.${var.base_domain}"
+  type    = "CNAME"
+  value   = var.youtrack_domain
+  proxied = false
 }
