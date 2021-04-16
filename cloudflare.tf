@@ -72,14 +72,6 @@ resource "cloudflare_record" "api_domain_a" {
   proxied = var.proxy_records
 }
 
-resource "cloudflare_record" "test_domain_a" {
-  zone_id = var.zone_id
-  name    = "test.${var.base_domain}"
-  type    = "A"
-  value   = var.kubernetes_ip
-  proxied = false
-}
-
 resource "cloudflare_record" "youtrack_domain" {
   zone_id = var.zone_id
   name    = "jira.${var.base_domain}"
