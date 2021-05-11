@@ -80,6 +80,14 @@ resource "cloudflare_record" "vpm_domain_a" {
   proxied = var.proxy_records
 }
 
+resource "cloudflare_record" "next_domain_a" {
+  zone_id = var.zone_id
+  name    = "next.${var.base_domain}"
+  type    = "A"
+  value   = var.kubernetes_ip
+  proxied = var.proxy_records
+}
+
 resource "cloudflare_record" "youtrack_domain" {
   zone_id = var.zone_id
   name    = "jira.${var.base_domain}"
