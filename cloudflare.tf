@@ -60,7 +60,7 @@ resource "cloudflare_record" "base_domain_a" {
   zone_id = var.zone_id
   name    = var.base_domain
   type    = "A"
-  value   = var.kubernetes_ip
+  value   = "167.233.9.17"
   proxied = var.proxy_records
 }
 
