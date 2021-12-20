@@ -1,2 +1,2 @@
 proxy_records = true
-kubernetes_ip = "35.225.118.74"
+kubernetes_ip = "167.233.9.17"
