@@ -95,3 +95,11 @@ resource "cloudflare_record" "youtrack_domain" {
   value   = var.youtrack_domain
   proxied = false
 }
+
+resource "cloudflare_record" "data_domain_a" {
+  zone_id = var.zone_id
+  name    = "data.${var.base_domain}"
+  type    = "A"
+  value   = var.kubernetes_ip
+  proxied = var.proxy_records
+}
