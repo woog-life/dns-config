@@ -25,10 +25,6 @@ provider "cloudflare" {
   api_token = var.cloudflare_token
 }
 
-variable "proxy_records" {
-  type = bool
-}
-
 variable "base_domain" {
   type    = string
   default = "woog.life"
@@ -49,7 +45,7 @@ resource "cloudflare_record" "www_cname" {
   name    = "www"
   type    = "CNAME"
   value   = var.base_domain
-  proxied = var.proxy_records
+  proxied = true
 }
 
 variable "kubernetes_ip" {
@@ -61,7 +57,7 @@ resource "cloudflare_record" "base_domain_a" {
   name    = var.base_domain
   type    = "A"
   value   = var.kubernetes_ip
-  proxied = var.proxy_records
+  proxied = true
 }
 
 resource "cloudflare_record" "api_domain_a" {
@@ -69,7 +65,7 @@ resource "cloudflare_record" "api_domain_a" {
   name    = "api.${var.base_domain}"
   type    = "A"
   value   = var.kubernetes_ip
-  proxied = var.proxy_records
+  proxied = true
 }
 
 resource "cloudflare_record" "vpm_domain_a" {
@@ -77,7 +73,7 @@ resource "cloudflare_record" "vpm_domain_a" {
   name    = "vpm.${var.base_domain}"
   type    = "A"
   value   = var.kubernetes_ip
-  proxied = var.proxy_records
+  proxied = true
 }
 
 resource "cloudflare_record" "next_domain_a" {
@@ -85,7 +81,7 @@ resource "cloudflare_record" "next_domain_a" {
   name    = "next.${var.base_domain}"
   type    = "A"
   value   = var.kubernetes_ip
-  proxied = var.proxy_records
+  proxied = true
 }
 
 resource "cloudflare_record" "youtrack_domain" {
@@ -101,5 +97,5 @@ resource "cloudflare_record" "data_domain_a" {
   name    = "data.${var.base_domain}"
   type    = "A"
   value   = var.kubernetes_ip
-  proxied = var.proxy_records
+  proxied = true
 }
