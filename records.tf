@@ -1,55 +1,9 @@
-terraform {
-  backend "remote" {
-    hostname     = "app.terraform.io"
-    organization = "BjoernPetersen"
-
-    workspaces {
-      name = "woog-dns-config"
-    }
-  }
-
-  required_providers {
-    cloudflare = {
-      source  = "cloudflare/cloudflare"
-      version = "~> 4.0"
-    }
-  }
-}
-
-variable "cloudflare_token" {
-  type      = string
-  sensitive = true
-}
-
-provider "cloudflare" {
-  api_token = var.cloudflare_token
-}
-
-variable "base_domain" {
-  type    = string
-  default = "woog.life"
-}
-
-variable "youtrack_domain" {
-  type    = string
-  default = "wooglife.myjetbrains.com"
-}
-
-variable "zone_id" {
-  type    = string
-  default = "8055e836af458509652d2e6ded7765bd"
-}
-
 resource "cloudflare_record" "www_cname" {
   zone_id = var.zone_id
   name    = "www"
   type    = "CNAME"
   value   = var.base_domain
   proxied = true
-}
-
-variable "kubernetes_ip" {
-  type = string
 }
 
 resource "cloudflare_record" "base_domain_a" {
