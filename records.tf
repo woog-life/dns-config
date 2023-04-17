@@ -55,9 +55,10 @@ resource "cloudflare_record" "data_domain_a" {
 }
 
 resource "cloudflare_record" "frontend" {
-  name    = "xn--gi8h.${var.base_domain}"
+  name    = "xn--gi8h6v.${var.base_domain}"
   type    = "A"
   zone_id = var.zone_id
   value   = var.kubernetes_ip
   proxied = false
 }
+
