@@ -48,6 +48,6 @@ resource "cloudflare_record" "frontend" {
   type    = "A"
   zone_id = var.zone_id
   value   = var.kubernetes_ip
-  proxied = false
+  proxied = true
   comment = "Managed by Terraform"
 }
