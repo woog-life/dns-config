@@ -4,6 +4,7 @@ resource "cloudflare_record" "www_cname" {
   type    = "CNAME"
   value   = var.base_domain
   proxied = true
+  comment = "Managed by Terraform"
 }
 
 resource "cloudflare_record" "base_domain_a" {
@@ -12,6 +13,7 @@ resource "cloudflare_record" "base_domain_a" {
   type    = "A"
   value   = var.kubernetes_ip
   proxied = true
+  comment = "Managed by Terraform"
 }
 
 resource "cloudflare_record" "api_domain_a" {
@@ -20,6 +22,7 @@ resource "cloudflare_record" "api_domain_a" {
   type    = "A"
   value   = var.kubernetes_ip
   proxied = true
+  comment = "Managed by Terraform"
 }
 
 resource "cloudflare_record" "vpm_domain_a" {
@@ -28,6 +31,7 @@ resource "cloudflare_record" "vpm_domain_a" {
   type    = "A"
   value   = var.kubernetes_ip
   proxied = true
+  comment = "Managed by Terraform"
 }
 
 resource "cloudflare_record" "next_domain_a" {
@@ -36,6 +40,7 @@ resource "cloudflare_record" "next_domain_a" {
   type    = "A"
   value   = var.kubernetes_ip
   proxied = true
+  comment = "Managed by Terraform"
 }
 
 resource "cloudflare_record" "youtrack_domain" {
@@ -44,6 +49,7 @@ resource "cloudflare_record" "youtrack_domain" {
   type    = "CNAME"
   value   = var.youtrack_domain
   proxied = false
+  comment = "Managed by Terraform"
 }
 
 resource "cloudflare_record" "data_domain_a" {
@@ -52,6 +58,7 @@ resource "cloudflare_record" "data_domain_a" {
   type    = "A"
   value   = var.kubernetes_ip
   proxied = true
+  comment = "Managed by Terraform"
 }
 
 resource "cloudflare_record" "frontend" {
@@ -60,5 +67,6 @@ resource "cloudflare_record" "frontend" {
   zone_id = var.zone_id
   value   = var.kubernetes_ip
   proxied = false
+  comment = "Managed by Terraform"
 }
 
