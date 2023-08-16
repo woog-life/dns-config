@@ -42,12 +42,3 @@ resource "cloudflare_record" "data_domain_a" {
   proxied = true
   comment = "Managed by Terraform"
 }
-
-resource "cloudflare_record" "frontend" {
-  name    = "future.${var.base_domain}"
-  type    = "A"
-  zone_id = var.zone_id
-  value   = var.kubernetes_ip
-  proxied = true
-  comment = "Managed by Terraform"
-}

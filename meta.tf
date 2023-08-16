@@ -9,15 +9,6 @@ resource "cloudflare_record" "youtrack_domain" {
   comment = "Managed by Terraform"
 }
 
-resource "cloudflare_record" "vpm_domain_a" {
-  zone_id = var.zone_id
-  name    = "vpm.${var.base_domain}"
-  type    = "A"
-  value   = var.kubernetes_ip
-  proxied = true
-  comment = "Managed by Terraform"
-}
-
 resource "cloudflare_record" "github_challenge" {
   zone_id = var.zone_id
   name    = "_github-challenge-woog-life.${var.base_domain}"
