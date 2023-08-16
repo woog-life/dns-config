@@ -1,1 +1,1 @@
-kubernetes_ip = "167.233.9.17"
+kubernetes_ip = "167.235.104.237"
