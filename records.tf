@@ -25,9 +25,9 @@ resource "cloudflare_record" "api_domain_a" {
   comment = "Managed by Terraform"
 }
 
-resource "cloudflare_record" "next_domain_a" {
+resource "cloudflare_record" "future_domain_a" {
   zone_id = var.zone_id
-  name    = "next.${var.base_domain}"
+  name    = "future.${var.base_domain}"
   type    = "A"
   value   = var.kubernetes_ip
   proxied = true
