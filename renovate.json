@@ -2,13 +2,5 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>woog-life/renovate-config"
-  ],
-  "packageRules": [
-    {
-      "matchManagers": [
-        "terraform"
-      ],
-      "automerge": true
-    }
   ]
 }
