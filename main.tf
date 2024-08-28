@@ -9,14 +9,14 @@ terraform {
   required_providers {
     cloudflare = {
       source  = "cloudflare/cloudflare"
-      version = "~> 4.0"
+      version = "~> 4.40.0"
     }
     github = {
       source  = "integrations/github"
-      version = "~> 6.0"
+      version = "~> 6.2.0"
     }
     google = {
-      version = "~> 5.18.0"
+      version = "~> 6.0.0"
     }
   }
 }
