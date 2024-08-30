@@ -23,23 +23,9 @@ terraform {
 
 provider "cloudflare" {}
 
-provider "github" {
-  owner = "woog-life"
-}
-
-provider "google" {
-  project = "personal-bjoernpetersen"
-  region  = "europe-west3"
-}
-
 variable "base_domain" {
   type    = string
   default = "woog.life"
-}
-
-variable "youtrack_domain" {
-  type    = string
-  default = "wooglife.myjetbrains.com"
 }
 
 variable "zone_id" {
